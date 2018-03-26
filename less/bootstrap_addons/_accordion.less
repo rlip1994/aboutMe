@@ -1,0 +1,124 @@
+// Core variables and mixins
+@import "_variables.less";
+// Custom for this template
+@import "bootstrap_addons/_mixins.less";
+//
+// Accordion
+// --------------------------------------------------
+
+// Parent container
+.accordion {
+  margin-bottom: @baseLineHeight;
+}
+
+// Group == heading + body
+.accordion-group {
+  margin: 0 ;
+  margin-bottom: 3px;
+}
+.accordion-heading {
+  border-bottom: 0;
+}
+
+//==================================
+// Accordion Toggle Styles
+//==================================
+.mod-bootstrap-collapse{
+  .accordion{
+    .accordion-group{
+
+      &.selected{
+
+      }
+    }
+  }
+}
+
+.accordion-toggle {
+  padding: 15px 0 15px 30px;
+  position: relative;
+  color: @white;
+  font: 400 20px/34px @baseFontFamily;
+  background: @globalColor;
+  display: block;
+  &:before {
+    content: '\f105';
+    font-size: 30px;
+    font-family: FontAwesome;
+    right: 35px;
+    position: absolute;
+    text-align: center;
+    top: 2px;
+    width: auto;
+    line-height: 56px;
+    color: @white;
+    .transition(all 0.3s ease);
+    // background: #F7F7F7;
+  }
+  i{
+    display: none;
+  }
+  &.selected {
+    &:before {
+      content: '\f107';
+
+    }
+  }
+  &:hover {
+    &:before {
+      color: @grayDark;
+    }
+  }
+}
+
+//==================================
+// Accordion Inner Styles
+//==================================
+.accordion-inner {
+  padding: 20px 40px 5px 30px;
+}
+
+//==================================
+// Custom Accordion Styles
+//==================================
+
+.mod-bootstrap-collapse__custom {
+  .accordion-toggle {
+    padding: 15px 0 15px 60px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    color: @white;
+    i{
+      display: none;
+    }
+    &:before {
+      display: inline-block;
+      right: auto;
+      left: 20px !important; 
+      content: '\f067';
+      font-size: 15px;
+      line-height: 56px;
+      top:6px;
+    }
+  &.selected {
+    &:before {
+      content: '\f068';
+
+    }
+  }
+  &:hover {
+    color: @grayDark;
+    &:before {
+      color: @grayDark;
+    }
+  }
+  }
+  .accordion-inner{
+    padding: 15px 40px 10px 30px;
+    background: @globalColor;
+    p{
+      color:@white;
+    }
+  }
+}

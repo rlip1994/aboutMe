@@ -1,0 +1,269 @@
+// Core variables and mixins
+@import "_variables.less";
+// Custom for this template
+@import "bootstrap_addons/_mixins.less";
+//
+// Buttons
+// --------------------------------------------------
+@btnFontSize: @baseFontSize + 2;
+@btnLineHeight: @baseLineHeight;
+@btnHeight: 76px;
+@btnPadding: ((@btnHeight - @btnLineHeight)/2) 44px ((@btnHeight - @btnLineHeight)/2) 44px;
+@btnBorderRadius: @baseBorderRadius;
+@btnColor: @white;
+@btnColorHighlight: @white;
+@btnBackground: @globalColor;
+@btnHighlightBackground: @headingsColor;
+@btnActBackground: @btnHighlightBackground;
+@btnBorder: none;
+// Info button(Read More)
+@btnInfoColor: @btnColor;
+@btnInfoColorHighlight: @btnColorHighlight;
+@btnInfoBackground: @btnBackground;
+@btnInfoHighlightBackground: @btnHighlightBackground;
+@btnActInfoBackground: @btnActBackground;
+@btnInfoBorder: @btnBorder;
+// Base styles
+// --------------------------------------------------
+// Core
+.btn {
+    border: @btnBorder;
+    .border-radius(@btnBorderRadius);
+    background: none;
+    color: @btnColor;
+    cursor: pointer;
+    display: inline-block;
+    font-size: @btnFontSize;
+    line-height: @btnLineHeight;
+    outline: none;
+    padding: 10px 20px;
+    text-shadow: none;
+    box-shadow: none;
+    text-align: center;
+    vertical-align: top;
+    .transition(all 0.4s ease);
+    .fa {
+        margin: 0 3px;
+    }
+    &.disabled,
+    &[disabled] {
+        cursor: default;
+        pointer-events: none;
+    }
+    &:hover,
+    &:focus,
+    &.active,
+    &.selected {
+        outline: none;
+        background: @btnActBackground;
+        color: @btnColorHighlight;
+    }
+    &.jmodedit {
+        &:hover,
+        &:focus,
+        &:active {
+            > span {
+                .transform(rotateX(0deg) translateY(0px));
+            }
+        }
+    }
+}
+
+form .btn {
+    padding: @btnPadding;
+    color: @white;
+    background: @globalColor;
+    &:hover {
+        color: @white;
+    }
+}
+
+// Button Sizes
+// --------------------------------------------------
+// Large
+.btn-large {
+    padding: @paddingLarge;
+    font-size: @fontSizeLarge;
+    .border-radius(@baseBorderRadius);
+}
+
+.btn-large [class^="icon-"],
+.btn-large [class*=" icon-"] {
+    margin-top: 4px;
+}
+
+// Small
+.btn-small {
+    padding: @paddingSmall;
+    font-size: @fontSizeSmall;
+    .border-radius(@baseBorderRadius);
+}
+
+.btn-small [class^="icon-"],
+.btn-small [class*=" icon-"] {
+    margin-top: 0;
+}
+
+.btn-mini [class^="icon-"],
+.btn-mini [class*=" icon-"] {
+    margin-top: -1px;
+}
+
+// Mini
+.btn-mini {
+    padding: @paddingMini;
+    font-size: @fontSizeMini;
+    .border-radius(@baseBorderRadius);
+}
+
+// Block button
+// -------------------------
+.btn-block {
+    display: block;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    .box-sizing(border-box);
+}
+
+// Vertically space out multiple block buttons
+.btn-block + .btn-block {
+    margin-top: 5px;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    &.btn-block {
+        width: 100%;
+    }
+}
+
+// Alternate buttons
+// --------------------------------------------------
+// Provide *some* extra contrast for those who can get it
+.btn-primary.active,
+.btn-warning.active,
+.btn-danger.active,
+.btn-success.active,
+.btn-info.active,
+.btn-inverse.active {
+    color: rgba(255, 255, 255, .75);
+}
+
+// Set the backgrounds
+// -------------------------
+// Warning appears are orange
+.btn-warning {
+    background: @btnWarningBackground;
+    color: @btnColor;
+    &:hover {
+        background: @btnWarningBackgroundHighlight;
+        color: @btnColorHighlight;
+    }
+}
+
+// Danger and error appear as red
+.btn-danger {
+    background: @btnDangerBackground;
+    color: @btnColor;
+    &:hover {
+        background: @btnDangerBackgroundHighlight;
+        color: @btnColorHighlight;
+    }
+}
+
+// Success appears as green
+.btn-success {
+    background: @btnSuccessBackground;
+    color: @btnColor;
+    &:hover {
+        background: @btnSuccessBackgroundHighlight;
+        color: @btnColorHighlight;
+    }
+}
+
+.btn-info {
+    background: @globalColor;
+    color: @btnColor;
+    &:hover {
+        color: @btnColorHighlight;
+    }
+}
+
+// Inverse appears as dark gray
+.btn-inverse {
+    background: @btnInverseBackground;
+    color: @btnColor;
+    &:hover {
+        background: @btnInverseBackgroundHighlight;
+        color: @btnColorHighlight;
+    }
+}
+
+// Cross-browser Jank@
+// --------------------------------------------------
+button.btn,
+input[type="submit"].btn {
+    // Firefox 3.6 only I believe
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+// Link buttons
+// --------------------------------------------------
+// Make a button look and behave like a link
+.btn-link,
+.btn-link:active,
+.btn-link[disabled] {
+    background-color: transparent;
+    background-image: none;
+    .box-shadow(none);
+}
+
+.btn-link {
+    border-color: transparent;
+    cursor: pointer;
+    color: @linkColor;
+    .border-radius(0);
+}
+
+.btn-link:hover,
+.btn-link:focus {
+    color: @linkColorHover;
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.btn-link[disabled]:hover,
+.btn-link[disabled]:focus {
+    color: @grayDark;
+    text-decoration: none;
+}
+
+.moduletable {
+    &.link {
+        text-align: center;
+        margin-top: 200px;
+        .link {
+            li {
+                a {
+                    font-size: 0;
+                    line-height: 0;
+                    &:before {
+                        color: @white;
+                        font-size: 60px;
+                    }
+                    &:hover{
+                      &:before{
+                        color: @globalColor;
+                      }
+                    }
+                }
+            }
+        }
+    }
+}
