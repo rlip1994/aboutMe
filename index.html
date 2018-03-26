@@ -1,290 +1,226 @@
-<?php defined('_JEXEC') or die;
-include_once('includes/includes.php'); ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php echo $this->language; ?>" lang="<?php echo $this->language; ?>">
-    <head>
-        <?php echo $viewport; ?>
-        <jdoc:include type="head"/>
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300italic,300,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
-    </head>
-    <body class="<?php echo $bodyClass; ?>">
-        <?php echo $ie_warning; ?>
-        <!-- Body -->
-        <div class="oh">
-        <div id="wrapper">
-            <div class="wrapper-inner">
-                <a id="fake" href='#'></a>
-                <div class="with-bg skew skew__deg-2 skew__deg-3_before-inset top_plane">
-                    <div class="skew_sub-1">
-                        <div class="skew_sub-2">
-                            <div class="skew_bg">
-                                <div class="top_wrapper_image"></div>
-                            </div>
-                        </div>
-                    </div>
-            <div class="top_wrapper">
-                <!-- Top -->
-                <div id="top">
-                    <div class="w-container">
-                                                           <!-- Logo -->
-                                <div id="logo" class="span<?php echo $this->params->get('logoBlockWidth'); ?>">
-                                    <a href="<?php echo JURI::base(); ?>">
-                                        <?php if(isset($logo)){ ?>
-                                        <img src="<?php echo $logo; ?>" alt="<?php echo $sitename; ?>">
-                                        <?php } ?>
-                                        <div><?php echo wrap_chars_with_span($sitename); ?></div>
-                                    </a>
-                                </div>
-                                <jdoc:include type="modules" name="top" style="themeHtml5"/>
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-loading">
 
-                    </div>
-                </div>
-                <?php if($this->countModules('header') && !$hideByView){ ?>
-                <div id="header">
-                    <div class="row-container">
-                        <div class="<?php echo $containerClass; ?>">
-                            <div class="<?php echo $rowClass; ?>">
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
 
-                                <jdoc:include type="modules" name="header" style="themeHtml5"/>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <?php } ?>
-                
-                <div id="breadcrumbs">
-                    <div class="row-container">
-                        <div class="<?php echo $containerClass; ?>">
-                            <div class="<?php echo $rowClass; ?>">
+				<!-- Intro -->
+					<div id="intro">
+						<h1>This is<br />
+						Massively</h1>
+						<p>A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
+						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>.</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
 
-                        <?php if($this->countModules('breadcrumbs')){ ?>
-                                <jdoc:include type="modules" name="breadcrumbs" style="themeHtml5"/>
-                            <?php } ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-            </div>
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo">Massively</a>
+					</header>
 
-                <?php if($this->countModules('navigation') && !$hideByView){ ?>
-                    <div id="navigation" class="with-bg skew skew__deg-7 skew__deg-8_before-inset navigation_plane">
-                    <div class="skew_sub-1">
-                        <div class="skew_sub-2">
-                            <div class="skew_bg">
-                                <div class="navigation_image"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skew_cnt_1">
-                        <div class="row-container">
-                            <div class="<?php echo $containerClass; ?>">
-                                <div class="<?php echo $rowClass; ?>">
-                                    <jdoc:include type="modules" name="navigation" style="themeHtml5"/>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                <?php } ?>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="active"><a href="index.html">This is Massively</a></li>
+							<li><a href="generic.html">Generic Page</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
 
-                <?php if($this->countModules('showcase') && !$hideByView){ ?>
-                    <div id="showcase">
-                                <jdoc:include type="modules" name="showcase" style="themeHtml5"/>
-                    </div>
-                <?php } ?>
+				<!-- Main -->
+					<div id="main">
 
-                <?php if($this->countModules('feature') && !$hideByView){ ?>
-                    <div id="feature" class="with-bg skew skew__deg-3">
-                    <div class="skew_sub-1">
-                        <div class="skew_sub-2">
-                            <div class="skew_bg">
-                                <div class="feature_image"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="skew_cnt_2">
-                        <div class="row-container">
-                            <div class="<?php echo $containerClass; ?>">
-                             <div class="<?php echo $rowClass; ?>">
-                                    <jdoc:include type="modules" name="feature" style="themeHtml5"/>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                <?php } ?>
-                <?php if($this->countModules('maintop') && !$hideByView){ ?>
-                    <div id="maintop" class="with-bg skew skew__deg-4">
-                        <div class="skew_sub-1">
-                            <div class="skew_sub-2">
-                                <div class="skew_bg bg-secondary"></div>
-                            </div>
-                        </div>
-                        <div class="skew_cnt_3">
-                        <div class="row-container">
-                            <div class="<?php echo $containerClass; ?>">
-                             <div class="<?php echo $rowClass; ?>">
-                                    <jdoc:include type="modules" name="maintop" style="themeHtml5"/>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                <?php } ?>
+						<!-- Featured Post -->
+							<article class="post featured">
+								<header class="major">
+									<span class="date">April 25, 2017</span>
+									<h2><a href="#">And this is a<br />
+									massive headline</a></h2>
+									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
+									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
+									amet nullam sed etiam veroeros.</p>
+								</header>
+								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
+								<ul class="actions">
+									<li><a href="#" class="button big">Full Story</a></li>
+								</ul>
+							</article>
 
+						<!-- Posts -->
+							<section class="posts">
+								<article>
+									<header>
+										<span class="date">April 24, 2017</span>
+										<h2><a href="#">Sed magna<br />
+										ipsum faucibus</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic02.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 22, 2017</span>
+										<h2><a href="#">Primis eget<br />
+										imperdiet lorem</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic03.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 18, 2017</span>
+										<h2><a href="#">Ante mattis<br />
+										interdum dolor</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 14, 2017</span>
+										<h2><a href="#">Tempus sed<br />
+										nulla imperdiet</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 11, 2017</span>
+										<h2><a href="#">Odio magna<br />
+										sed consectetur</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+								<article>
+									<header>
+										<span class="date">April 7, 2017</span>
+										<h2><a href="#">Augue lorem<br />
+										primis vestibulum</a></h2>
+									</header>
+									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
+									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
+									<ul class="actions">
+										<li><a href="#" class="button">Full Story</a></li>
+									</ul>
+								</article>
+							</section>
 
+						<!-- Footer -->
+							<footer>
+								<div class="pagination">
+									<!--<a href="#" class="previous">Prev</a>-->
+									<a href="#" class="page active">1</a>
+									<a href="#" class="page">2</a>
+									<a href="#" class="page">3</a>
+									<span class="extra">&hellip;</span>
+									<a href="#" class="page">8</a>
+									<a href="#" class="page">9</a>
+									<a href="#" class="page">10</a>
+									<a href="#" class="next">Next</a>
+								</div>
+							</footer>
 
-                <!-- Main Content row -->
-                <div id="content"  class="with-bg skew skew__deg-1">
-                     <div class="skew_sub-1">
-                            <div class="skew_sub-2">
-                                <div class="skew_bg bg-secondary"></div>
-                            </div>
-                     </div>
-                     <div class="skew_cnt_4">
-                    <?php 
-                    if($this->countModules('map') && !$hideByView){ ?>
-                    <!-- Map -->
-                    <div id="map">
-                        <jdoc:include type="modules" name="map" style="html5nosizeMap"/>
-                    </div>
-                    <?php }
-                    $layout = $params->get('content_layout');
-                    if($layout == "normal"){ ?>
-                    <div class="row-container">
-                        <div class="<?php echo $containerClass; ?>">
-                    <?php } ?>
-                            <div class="content-inner <?php echo $rowClass; ?>">
-                                <?php if($this->countModules('aside-left') && !$hideByOption && $view !== 'form'){ ?>
-                                <!-- Left sidebar -->
-                                <div id="aside-left" class="span<?php echo $asideLeftWidth; ?>">
-                                    <aside role="complementary">
-                                        <jdoc:include type="modules" name="aside-left" style="html5nosize"/>
-                                    </aside>
-                                </div>
-                                <?php } ?>
-                                <div id="component" class="span<?php echo $mainContentWidth; ?>">
-                                    <main role="main">
-                                        <?php if($this->countModules('content-top') && !$hideByView){ ?>
-                                        <!-- Content-top -->
-                                        <div id="content-top" class="<?php echo $rowClass; ?>">
-                                            <jdoc:include type="modules" name="content-top" style="themeHtml5"/>
-                                        </div>
-                                        <?php } ?>
-                                        <jdoc:include type="message"/>
-                                        <jdoc:include type="component"/>
-                                        <?php if($this->countModules('content-bottom') && !$hideByOption && $view !== 'form'){ ?>
-                                        <!-- Content-bottom -->
-                                        <div id="content-bottom" class="<?php echo $rowClass; ?>">
-                                            <jdoc:include type="modules" name="content-bottom" style="themeHtml5"/>
-                                        </div>
-                                        <?php } ?>
-                                    </main>
-                                </div>
-                                <?php if($this->countModules('aside-right') && !$hideByOption && $view !== 'form'){ ?>
-                                <!-- Right sidebar -->
-                                <div id="aside-right" class="span<?php echo $asideRightWidth; ?>">
-                                    <aside role="complementary">
-                                        <jdoc:include type="modules" name="aside-right" style="html5nosize"/>
-                                    </aside>
-                                </div>
-                                <?php } ?>
-                            </div>
-                            <?php if($layout == "normal"){ ?>
-                        </div>
-                    </div>
-                            <?php } ?>
-                            </div
-                </div>
-                <?php if(!$hideByView){
+					</div>
 
-                    if($this->countModules('mainbottom')){
-                        echo display_position('mainbottom');
-                    }
-                    if($this->countModules('video')){
-                        echo display_position('video');
-                    }
-                    if($this->countModules('mainbottom-2')){
-                        echo display_position('mainbottom-2');
-                    }
-                    if($this->countModules('mainbottom-3')){
-                        echo display_position('mainbottom-3');
-                    }
-                    if($this->countModules('mainbottom-4')){
-                        echo display_position('mainbottom-4');
-                    }
-                    if($this->countModules('mainbottom-5')){
-                        echo display_position('mainbottom-5');
-                    }
-                    if($this->countModules('bottom')){
-                        echo display_position('bottom');
-                    }
-                    if($this->countModules('footer')){
-                        echo display_position('footer');
-                    }
-                } ?>
-                <div id="push"></div>
-            </div>
-        </div>
-        <div id="footer-wrapper">
-            <div class="footer-wrapper-inner">
-                <!-- Copyright -->
-                <div id="copyright" role="contentinfo">
-                    <div class="row-container skew_cnt">
-                        <div class="<?php echo $containerClass; ?>">
-                            <div class="<?php echo $rowClass; ?>">
-                                <jdoc:include type="modules" name="copyright" style="themeHtml5"/>
-                                <div class="copyright span<?php echo $this->params->get('footerWidth'); ?>">
-                                    <?php if($this->params->get('footerLogo')){ ?>
-                                    <!-- Footer Logo -->
-                                    <a class="footer_logo" href="<?php echo $this->baseurl; ?>">
-                                        <img src="<?php echo $footerLogo; ?>" alt="<?php echo $sitename; ?>">
-                                    </a>
-                                    <?php }else{ ?>
-                                    <span class="siteName"><?php echo $sitename; ?></span>
-                                    <?php }
-                                    if($this->params->get('footerCopy')) echo '<span class="copy">&copy;</span>';
-                                    if($this->params->get('footerYear')) echo '<span class="year">'.date('Y').'</span>';
-                                    if($this->params->get('privacyLink')){ ?>
-                                    <a class="privacy_link" rel="license" href="<?php echo $privacy_link_url; ?>">
-                                        <?php echo $this->params->get('privacy_link_title'); ?>
-                                    </a>
-                                    <?php }
-                                    if($this->params->get('termsLink')){ ?>
-                                    <a class="terms_link" href="<?php echo $terms_link_url; ?>">
-                                        <?php echo $this->params->get('terms_link_title'); ?>
-                                    </a>
-                                    <?php } ?>
-                                </div>
-                                <?php echo $todesktop; ?>
-                                More <a  rel='nofollow' href='http://www.templatemonster.com/category.php?category=418&type=24' target='_blank'>Business Templates at TemplateMonster.com</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </div>
-        <?php echo $back_top;
-        if($this->countModules('modal')){
-        $doc->addScriptdeclaration('(function($){$(document).ready(function(){var o=$(\'a[href="#modal"]\');o.click(function(e){$("#modal").modal({show:true,backdrop:false});e.preventDefault()});$("#modal button.modalClose").click(function(e){$("#modal").modal("hide");e.preventDefault()});$(".modal-hide").click(function(e){$("#modal").modal("hide")})})})(jQuery);'); ?>
-        <div id="modal" class="modal hide fade loginPopup">
-            <div class="modal-hide"></div>
-            <div class="modal_wrapper">
-                <button type="button" class="close modalClose">×</button>
-                <jdoc:include type="modules" name="modal" style="modal"/>
-            </div>
-        </div>
-        <?php }
-        if($this->countModules('fixed-sidebar-left')){ ?>
-        <jdoc:include type="modules" name="fixed-sidebar-left" style="none"/>
-        <?php }
-        if($this->countModules('fixed-sidebar-right')){ ?>
-        <div id="fixed-sidebar-right">
-            <jdoc:include type="modules" name="fixed-sidebar-right" style="sidebar"/>
-        </div>
-        <?php } ?>
-        <jdoc:include type="modules" name="debug" style="none"/>
-    </body>
+				<!-- Footer -->
+					<footer id="footer">
+						<section>
+							<form method="post" action="#">
+								<div class="field">
+									<label for="name">Name</label>
+									<input type="text" name="name" id="name" />
+								</div>
+								<div class="field">
+									<label for="email">Email</label>
+									<input type="text" name="email" id="email" />
+								</div>
+								<div class="field">
+									<label for="message">Message</label>
+									<textarea name="message" id="message" rows="3"></textarea>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split contact">
+							<section class="alt">
+								<h3>Address</h3>
+								<p>1234 Somewhere Road #87257<br />
+								Nashville, TN 00000-0000</p>
+							</section>
+							<section>
+								<h3>Phone</h3>
+								<p><a href="#">(000) 000-0000</a></p>
+							</section>
+							<section>
+								<h3>Email</h3>
+								<p><a href="#">info@untitled.tld</a></p>
+							</section>
+							<section>
+								<h3>Social</h3>
+								<ul class="icons alt">
+									<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+								</ul>
+							</section>
+						</section>
+					</footer>
+
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
