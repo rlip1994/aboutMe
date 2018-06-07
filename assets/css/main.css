@@ -3022,7 +3022,7 @@
 	}
 
 		#wrapper > .bg {
-			position: absolute;
+			position: relative;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -3073,7 +3073,7 @@
 		@media screen and (orientation: portrait) {
 
 			#wrapper > .bg {
-				background-size: auto,								auto,														auto 175%;
+				background-size: auto,								auto,														auto 50%;
 			}
 
 		}
